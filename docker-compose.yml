@@ -18,6 +18,15 @@ services:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: deneme
         volumes: 
-            - dbdata:/var/lib/mysql 
+            - dbdata:/var/lib/mysql
+    initdb:
+        build: 
+            context: ./DockerMysqlDotNet
+            dockerfile: Dockerfile
+        restart: on-failure:10
+        depends_on: 
+            - db
+        
+
 volumes: 
     dbdata: 
