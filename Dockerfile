@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 RUN dotnet restore
-RUN dotnet ef migrations add init
+RUN dotnet ef migrations add init --project ./DockerMysqlDotNet
 RUN dotnet ef database update
 RUN dotnet publish -c Release -o ./publish
 
