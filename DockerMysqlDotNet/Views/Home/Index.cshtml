@@ -1,0 +1,66 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<head>
+    <title>Test Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="p-2 text-center mx-auto bg-danger text-white" style="font-size:18px;">Test Application</div>
+    <hr/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header w-full">
+                        Add Student
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/Home/AddStudent" class="form-group">
+                            <input type="text" class="form-control mt-2" placeholder="Name" name="Name" />
+                            <input type="text" class="form-control mt-2" placeholder="Surname" name="Surname" />
+                            <input type="submit" class="btn btn-success mt-2 " value="Submit" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        Student List
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model){
+                                <tr>
+                                    <td>@i.Id</td>
+                                    <td>@i.Name</td>
+                                    <td>@i.Surname</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+    </div>
+    
+</body>
+</html>
