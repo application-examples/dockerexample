@@ -9,6 +9,8 @@ services:
       - '8080:80'
     depends_on:
       - db
+    links:
+      - db:db
   db:
     image: 'mysql/mysql-server:5.7'
     ports:
