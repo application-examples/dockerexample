@@ -20,12 +20,11 @@ services:
       MYSQL_DATABASE: deneme
       MYSQL_USERNAME: nekinci
       MYSQL_PASSWORD: nekinci
-      MYSQL_ROOT_HOST: '172.19.0.4'
+      MYSQL_ROOT_HOST: "%"
     volumes:
       - 'dbdata:/var/lib/mysql'
       - ./:/var/lib/mysql:rw,delegated
       - ./:/docker-entrypoint-initdb.d
-      - ./mysqld.cnf:/etc/mysql/my.cnf
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
