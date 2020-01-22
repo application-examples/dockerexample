@@ -22,8 +22,10 @@ services:
     build:
       context: ./DockerMysqlDotNet
       dockerfile: Dockerfile
-    restart: 'on-failure:10'
+    restart: 'on-failure:20'
     depends_on:
       - db
+    links:
+        - db
 volumes:
-  dbdata: null
+  dbdata:
