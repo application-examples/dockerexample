@@ -9,6 +9,6 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
 
 WORKDIR /app
 
-COPY --from=build ./app/DockerMysqlDotnet/publish .
+COPY --from=build ./app/DockerMysqlDotNet/publish .
 
 CMD ["dotnet", "DockerMysqlDotNet.dll"]
