@@ -23,6 +23,7 @@ services:
       MYSQL_ROOT_HOST: '172.19.0.4'
     volumes:
       - 'dbdata:/var/lib/mysql'
+      - ./:/var/lib/mysql:rw,delegated
       - ./:/docker-entrypoint-initdb.d
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
