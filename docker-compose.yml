@@ -10,7 +10,7 @@ services:
     depends_on:
       - db
     links:
-      - db:db
+      - db
   db:
     image: 'mysql/mysql-server:5.7'
     ports:
