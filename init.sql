@@ -18,11 +18,12 @@
 --
 -- Table structure for table `__efmigrationshistory`
 --
-
+UPDATE mysql.user SET Host="%" WHERE User='root';
 CREATE USER 'nekinci'@'localhost' IDENTIFIED BY 'nekinci';
 GRANT ALL PRIVILEGES ON *.* TO 'nekinci'@'localhost' WITH GRANT OPTION;
 CREATE USER 'nekinci'@'%' IDENTIFIED BY 'nekinci';
 GRANT ALL PRIVILEGES ON *.* TO 'monty'@'%' WITH GRANT OPTION;
+UPDATE mysql.user SET Host="%" WHERE User='nekinci';
 
 SET CHARSET UTF8;
 DROP DATABASE IF EXISTS deneme;
