@@ -18,6 +18,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: deneme
+      MYSQL_USERNAME: nekinci
+      MYSQL_PASSWORD: nekinci
     volumes:
       - 'dbdata:/var/lib/mysql'
       - ./:/docker-entrypoint-initdb.d
@@ -28,8 +30,8 @@ services:
     ports:
       - '8090:80'
     environment:
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: nekinci
+      MYSQL_PASSWORD: nekinci
       MYSQL_ROOT_PASSWORD: root
 volumes:
   dbdata:
