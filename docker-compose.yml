@@ -20,7 +20,7 @@ services:
       MYSQL_DATABASE: deneme
       MYSQL_USERNAME: nekinci
       MYSQL_PASSWORD: nekinci
-      MYSQL_ROOT_HOST: %
+      MYSQL_ROOT_HOST: '%'
     volumes:
       - 'dbdata:/var/lib/mysql'
       - ./:/docker-entrypoint-initdb.d
