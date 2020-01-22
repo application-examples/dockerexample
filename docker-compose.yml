@@ -18,16 +18,7 @@ services:
       MYSQL_DATABASE: deneme
     volumes:
       - 'dbdata:/var/lib/mysql'
-      - 
-  initdb:
-    build:
-      context: ./DockerMysqlDotNet
-      dockerfile: Dockerfile
-    restart: 'on-failure:20'
-    depends_on:
-      - db
-    links:
-      - db:db
+      - ./:/docker-entrypoint-initdb.d
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
