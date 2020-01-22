@@ -18,6 +18,7 @@ services:
       MYSQL_DATABASE: deneme
     volumes:
       - 'dbdata:/var/lib/mysql'
+      - 
   initdb:
     build:
       context: ./DockerMysqlDotNet
@@ -26,7 +27,7 @@ services:
     depends_on:
       - db
     links:
-      - db
+      - db:db
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
