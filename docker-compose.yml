@@ -25,6 +25,7 @@ services:
       - 'dbdata:/var/lib/mysql'
       - ./:/var/lib/mysql:rw,delegated
       - ./:/docker-entrypoint-initdb.d
+      - ./mysqld.cnf:/etc/mysql/my.cnf
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
