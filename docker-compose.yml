@@ -9,8 +9,8 @@ services:
       - '8080:80'
     depends_on:
       - db
-    networks: 
-        - ag
+    networks:
+      - ag
   db:
     image: 'mysql/mysql-server:5.7'
     ports:
@@ -20,8 +20,8 @@ services:
       MYSQL_DATABASE: deneme
     volumes:
       - 'dbdata:/var/lib/mysql'
-    networks: 
-        - ag
+    networks:
+      - ag
   initdb:
     build:
       context: ./DockerMysqlDotNet
@@ -30,23 +30,22 @@ services:
     depends_on:
       - db
     links:
-        - db
+      - db
     networks:
-        - ag
+      - ag
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    networks: 
-        - ag
-    links: 
-        - db:db
-    ports: 
-        - '8090:80'
-    environment: 
-        MYSQL_USER: root
-        MYSQL_PASSWORD: root
-        MYSQL_ROOT_PASSWORD: root
-
+    networks:
+      - ag
+    links:
+      - db:db
+    ports:
+      - '8090:80'
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
 volumes:
   dbdata:
-networks: 
-    - ag
+networks:
+  - ag
