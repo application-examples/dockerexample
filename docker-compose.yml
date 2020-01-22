@@ -12,7 +12,7 @@ services:
     links:
       - db
   db:
-    image: 'mysql/mysql-server:5.7'
+    image: 'mysql/mysql-server:5.6'
     ports:
       - '3306:3306'
     environment:
