@@ -6,4 +6,4 @@ COPY . .
 
 RUN dotnet restore
 RUN dotnet ef migrations add init1
-RUN dotnet ef update database
+RUN dotnet ef database update
