@@ -5,5 +5,5 @@ WORKDIR /app
 COPY . .
 
 RUN dotnet restore
-RUN dotnet ef migrations add init
+RUN dotnet ef migrations add init1
 RUN dotnet ef update database
