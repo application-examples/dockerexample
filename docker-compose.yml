@@ -12,23 +12,17 @@ services:
     links:
       - db
   db:
-    image: 'mysql:5.7'
+    image: 'mysql'
     ports:
       - '3306:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: deneme
-      MYSQL_USERNAME: nekinci
-      MYSQL_PASSWORD: nekinci
-      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: '123456'
     volumes:
       - 'dbdata:/var/lib/mysql'
-      - ./:/var/lib/mysql:rw,delegated
-      - ./:/docker-entrypoint-initdb.d
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
-      - db:db
+      - db
     ports:
       - '8090:80'
     environment:
